@@ -2,19 +2,19 @@
 
 <p>CURE AI is a comprehensive question and answer-based service that leverages AI frameworks to deliver chat-based answers to specific clinical queries that arise within clinical practice. Our platform is designed to provide reliable and credible information derived from an extensive database of peer-reviewed medical literature with appropriate citations as support.</p>
 
-<h2>Product</h2>
+<h3>Product</h2>
 
 <p>Our platform is built upon the latest advances in AI technology, but we have added appropriate checks and balances to ensure the reliability of the system. The AI technology that we use allows us to answer clinical queries in a matter of seconds. We currently have a fully functional product focused specifically on clinical questions derived from cardiovascular topics. This product is ready to be deployed in its "limited" form. However, our next major step is to expand this knowledge base to the entire scope of PubMed, which contains roughly 35 million articles. We estimate this collection will be completed and our product will be ready for prime time by the end of the summer.</p>
 
-<h2>Why CURE AI?</h2>
+<h3>Why CURE AI?</h2>
 
 <p>At CURE AI, we believe that there are core challenges inherent to Chat GPT and similar platforms that make AI fundamentally incompatible for use within real medical practice. Our central hypothesis is that these shortcomings are the reasons why ChatGPT in its current form will not be adopted by the practicing clinician in the United States. Therefore, we have created a product that addresses the fundamental issues that exist with current AI platforms. Our product has been tested and has already demonstrated that 84% of clinical queries related to cardiovascular diseases are able to be answered by our platform, and 100% of the answers are able to be verified based on the reported literature.</p>
 
-<h2>Our Team</h2>
+<h3>Our Team</h2>
 
 <p>Our team is composed of enthusiastic software engineers and medical professionals who have the joint expertise to thrive in this space. Our team members have technical knowledge in the area of AI and software engineering necessary to take on this project. Our medical professionals have clinical experience coupled with a strong background in clinical research, making them the perfect team members for this project.</p>
 
-<h2>Future Plans</h2>
+<h3>Future Plans</h2>
 
 <p>Our current system has been deployed on a temporary website. While we are currently focusing on expanding our dataset, we will also be focusing efforts on creating a web-based and mobile platform for easier user accessibility. By offering this powerful tool to our physicians, we believe CURE AI will revolutionize the way clinical questions are answered within clinical practice and ultimately lead to better care delivered to patients.</p>
 
@@ -35,13 +35,7 @@
 <h3>Reliability and Transparency</h3>
 <p>To ensure transparency and reliability, all literature used to answer the user's question is cited in the response, allowing healthcare professionals to verify the results and conduct further research if needed.</p>
 <p>We believe that by combining these advanced technologies, CURE AI offers a reliable and scientifically grounded solution for healthcare professionals seeking quick access to evidence-based information.</p> 
-<h2>Installation</h2>
+<h3>Installation</h2>
 <p>Instructions for installing CURE AI will be provided upon release of the product.</p>
-<h2>Usage</h2>
+<h3>Usage</h2>
 <p>Instructions for using CURE AI will be provided upon release of the product.</p>
-<h2>Contributing</h2>
-<p>We welcome contributions from the community. Please contact us at [insert contact email] to discuss potential contributions.</p>
-<h2>Credits</h2>
-<p>CURE AI is a project created by [insert team member names].</p>
-<h2>License</h2>
-<p>This project is licensed under the MIT License - see the LICENSE file for details.</p>
