@@ -12,7 +12,7 @@
 
 <h3>Our Team</h2>
 
-<p>Our team is composed of enthusiastic software engineers and medical professionals who have the joint expertise to thrive in this space. Our team members have technical knowledge in the area of AI and software engineering necessary to take on this project. Our medical professionals have clinical experience coupled with a strong background in clinical research, making them the perfect team members for this project.</p>
+<p>Our team consists of two individuals: myself, a rising junior at Emory University studying Computer Science, and my brother, a rising senior at Harvard Medical School. With my technical expertise and my brother's medical knowledge, we make a strong team for this project.</p>
 
 <h3>Future Plans</h2>
 
