@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setup Payment</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='setuppayment.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Setup Payment</h1>
+      <form>
+        <label for="card_number">Card Number</label>
+        <input
+          type="tel"
+          id="card_number"
+          name="card_number"
+          placeholder="1234 5678 9012 3456"
+        />
+
+        <label for="card_expiration">Card Expiration</label>
+        <input
+          type="tel"
+          id="card_expiration"
+          name="card_expiration"
+          placeholder="MM/YY"
+          maxlength="5"
+        />
+
+        <label for="security_code">Security Code</label>
+        <input
+          type="tel"
+          id="security_code"
+          name="security_code"
+          placeholder="123"
+          maxlength="3"
+        />
+
+        <label for="name_on_card">Name on Card</label>
+        <input
+          type="text"
+          id="name_on_card"
+          name="name_on_card"
+          placeholder="John Doe"
+        />
+
+        <label for="billing_address">Billing Address</label>
+        <input
+          type="text"
+          id="billing_address"
+          name="billing_address"
+          placeholder="123 Main St, City, State, ZIP"
+        />
+
+        <label for="country">Country or Region</label>
+        <select id="country" name="country">
+          <!-- Add the list of countries here -->
+        </select>
+
+        <!-- Add more input fields if necessary -->
+
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+    <script>
+      const countries = [
+        "United States",
+        "Canada",
+        "United Kingdom",
+        "Germany",
+        "France",
+        "Australia",
+        "Italy",
+        "Spain",
+        "Netherlands",
+        "Switzerland",
+        "Sweden",
+        "Belgium",
+        "Japan",
+        "China",
+        "South Korea",
+        "India",
+        "Brazil",
+        "Mexico",
+        "Argentina",
+        "Poland",
+        "Russia",
+        "Turkey",
+        "South Africa",
+        "Indonesia",
+        "Singapore",
+      ];
+      const countrySelect = document.getElementById("country");
+      countries.forEach((country) => {
+        let option = document.createElement("option");
+        option.text = country;
+        option.value = country;
+        countrySelect.add(option);
+      });
+
+      const cardNumber = document.getElementById("card_number");
+      cardNumber.addEventListener("input", (e) => {
+        e.target.value = e.target.value
+          .replace(/\D/g, "")
+          .replace(/(\d{4})/g, "$1 ")
+          .trim();
+        if (e.target.value.replace(/\s/g, "").length > 16) {
+          e.target.value = e.target.value.slice(0, -1);
+        }
+      });
+
+      const cardExpiration = document.getElementById("card_expiration");
+      cardExpiration.addEventListener("input", (e) => {
+        let value = e.target.value.replace(/\D/g, "");
+        if (value.length > 2) {
+          value = value.substring(0, 2) + "/" + value.substring(2, 4);
+        }
+        e.target.value = value;
+      });
+
+      const securityCode = document.getElementById("security_code");
+      securityCode.addEventListener("input", (e) => {
+        e.target.value = e.target.value.replace(/\D/g, "");
+      });
+      const nameOnCard = document.getElementById("name_on_card");
+      nameOnCard.addEventListener("input", (e) => {
+        e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, "");
+      });
+
+      const billingAddress = document.getElementById("billing_address");
+      billingAddress.addEventListener("input", (e) => {
+        e.target.value = e.target.value.replace(/[^0-9a-zA-Z\s,]/g, "");
+      });
+    </script>
+  </body>
+</html>

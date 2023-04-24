@@ -1,0 +1,12 @@
+openai
+openai[embeddings]
+numpy
+pinecone-client
+more-itertools
+metapub
+pandas
+python-dotenv
+flask
+stripe
+Cryptodome
+mysql-connector-python

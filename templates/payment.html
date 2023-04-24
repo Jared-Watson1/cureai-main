@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='payment.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Choose Your Plan</h1>
+        <p>Select a plan that fits your needs</p>
+      </div>
+      <div class="pricing-table">
+        <div class="plan">
+          <div class="title">
+            <h2>Basic</h2>
+            <h3>$30 per month</h3>
+          </div>
+          <div class="description">
+            <p>
+              For just $30 per month, our Basic Tier gives you access to up to
+              50 expertly curated, AI-driven queries to help you stay informed
+              in the fast-paced medical world. Enjoy limited access to our
+              specialized PM database and responsive email support, ensuring you
+              get the reliable answers you need to provide top-notch care to
+              your patients.
+            </p>
+          </div>
+          <div class="cta">
+            <a href="{{ url_for('payment') }}">Select Plan</a>
+          </div>
+        </div>
+        <div class="plan">
+          <div class="title">
+            <h2>Professional</h2>
+            <h3>$75 per month</h3>
+          </div>
+          <div class="description">
+            <p>
+              Upgrade to our Professional Tier at $75 per month and unlock up to
+              300 queries, granting you full access to the entire PubMed
+              database once expanded. Receive priority email support for a
+              seamless experience and stay ahead in your practice, confident
+              that CURE AI's robust, credible answers will empower you to
+              deliver the highest quality patient care.
+            </p>
+          </div>
+          <div class="cta">
+            <a href="{{ url_for('payment') }}">Select Plan</a>
+          </div>
+        </div>
+        <div class="plan">
+          <div class="title">
+            <h2>Enterprise</h2>
+            <h3>Custom Pricing</h3>
+          </div>
+          <div class="description">
+            <p>
+              Choose our custom-priced Enterprise Tier for unlimited queries and
+              personalized solutions tailored to your organization's needs.
+              Benefit from a dedicated account manager, phone support, and full
+              access to the expanded PubMed database, guaranteeing that you and
+              your team have the most reliable and comprehensive AI-driven
+              medical information at your fingertips, elevating patient care to
+              new heights.
+            </p>
+          </div>
+          <div class="cta">
+            <a href="{{ url_for('contactus') }}">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

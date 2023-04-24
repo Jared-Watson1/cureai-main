@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cure AI</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='index.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='assets/favicon.png') }}"
+    />
+  </head>
+  <body>
+    <div id="sidebar" class="sidebar">
+      <a href="#" onclick="toggleSidebar()">Close</a>
+      <a href="#about">About Us</a>
+      <a href="#settings">Settings</a>
+      <a href="/logout">Log out</a>
+    </div>
+    <header>
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <span class="open-menu" onclick="toggleSidebar()">&#9776;</span>
+            <img
+              src="{{ url_for('static', filename='assets/cure_logo_bluebg.jpeg') }}"
+              alt="C.U.R.E AI"
+              class="logo"
+            />
+            <div class="version-number">v1.0.0</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="description-section">
+        <h2>Introducing CURE AI</h2>
+        <div class="description-text">
+          <p>
+            Are you considering using AI to answer clinical questions arising in
+            your practice? Look no further! Traditional AI solutions like OpenAI
+            or ChatGPT will provide inaccurate data and unreliable references.
+            CURE AI is the game-changer you've been waiting for.
+          </p>
+          <hr />
+          <p>
+            By harnessing the power of ChatGPT models and combining it with the
+            reliability and scientific rigor of peer-reviewed literature indexed
+            in PubMed, CURE AI offers a unique and trustworthy platform for your
+            clinical inquiries.
+          </p>
+          <hr />
+          <p>
+            Choose CURE AI - the only AI platform optimized to answer highly
+            specific clinical questions using trusted resources.
+          </p>
+        </div>
+      </section>
+      <div class="separator"></div>
+      <!-- Add this line -->
+      <section class="ask-section">
+        <p>Type your question below:</p>
+        <form method="POST" action="{{ url_for('index') }}">
+          <div class="input-wrapper">
+            <!-- Add this div -->
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                name="question"
+                class="form-control"
+                placeholder="Enter your question..."
+                required
+              />
+              <button type="submit" class="btn btn-outline-primary">Ask</button>
+            </div>
+          </div>
+          <!-- Close the div -->
+        </form>
+        <!-- ... -->
+      </section>
+      <div class="section-divider"></div>
+      <!-- ... -->
+      {% if answer %}
+      <div id="output" class="bg-light py-5">
+        <strong>Q:</strong> {{ question }}<br />
+        <strong>A:</strong>
+        <pre class="output-content">{{ answer }}</pre>
+      </div>
+      {% endif %} {% if pmid_title_pairs %}
+      <div class="ref-section py-5">
+        <h3>References</h3>
+        <div class="ref-list-container">
+          <div class="ref-list">
+            {% for pmid, title in pmid_title_pairs %}
+            <div class="mb-3">
+              <a href="{{ pmid }}" target="_blank" class="btn btn-primary mb-2">
+                {{ title }} - PMID: {{ pmid.split('/')[-1] }}
+                <!-- Extract PMID number -->
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+      // Add this function to toggle the sidebar
+      function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        if (sidebar.style.right === "-250px") {
+          sidebar.style.right = "0";
+          // Add event listener for clicks outside the sidebar
+          document.addEventListener("click", closeSidebarOnClickOutside);
+        } else {
+          sidebar.style.right = "-250px";
+          // Remove the event listener when the sidebar is closed
+          document.removeEventListener("click", closeSidebarOnClickOutside);
+        }
+      }
+
+      // Function to close the sidebar if the click is outside the menu
+      function closeSidebarOnClickOutside(event) {
+        var sidebar = document.getElementById("sidebar");
+        if (isOutsideMenu(event.target, sidebar)) {
+          toggleSidebar();
+        }
+      }
+
+      // Function to check if the clicked element is outside the menu
+      function isOutsideMenu(target, menu) {
+        if (target === menu || target.classList.contains("open-menu")) {
+          return false;
+        }
+
+        while (target.parentElement) {
+          if (target.parentElement === menu) {
+            return false;
+          }
+          target = target.parentElement;
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>
